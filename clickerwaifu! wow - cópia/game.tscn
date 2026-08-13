@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://0qritd1mf84y"]
+
+[ext_resource type="Script" uid="uid://ct62i8sie02ie" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://ibow5b1ypi4d" path="res://menu_button.gd" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://b3snl2lnv0810" path="res://Scenes - cópia/painel_shop.tscn" id="2_feb5d"]
+
+[node name="Game" type="Node2D" unique_id=910643490]
+script = ExtResource("1_80nbo")
+
+[node name="RotuloCurrency" type="Label" parent="." unique_id=1665346361]
+offset_left = 338.0
+offset_top = 14.0
+offset_right = 514.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 32
+text = "Currency: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoInicial" type="ColorRect" parent="." unique_id=629899661]
+offset_left = 336.0
+offset_top = 212.0
+offset_right = 521.0
+offset_bottom = 271.0
+color = Color(0.1254902, 0.48235294, 1, 1)
+
+[node name="Label" type="Label" parent="BotaoInicial" unique_id=1465717159]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 15.0
+offset_right = 164.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 24
+text = "Clique Aqui"
+
+[node name="BotaoInicial" type="Button" parent="BotaoInicial" unique_id=1290883990]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 59.0
+flat = true
+
+[node name="PainelShop" parent="." unique_id=83051306 instance=ExtResource("2_feb5d")]
+
+[node name="PainelUpgrades" type="Panel" parent="." unique_id=1465480360]
+visible = false
+offset_left = 816.0
+offset_top = 24.0
+offset_right = 1107.0
+offset_bottom = 384.0
+
+[node name="Label" type="Label" parent="PainelUpgrades" unique_id=287816963]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 2.0
+offset_right = 234.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 32
+text = "UPGRADES"
+
+[node name="Panel" type="Panel" parent="." unique_id=1541886551]
+visible = false
+offset_left = 876.0
+offset_top = 67.0
+offset_right = 1112.0
+offset_bottom = 586.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=289859529]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 25.0
+offset_right = 171.0
+offset_bottom = 48.0
+text = "Gacha Life 3"
+
+[node name="GachaButton" type="Button" parent="Panel" unique_id=1247623545]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 403.0
+offset_right = 177.0
+offset_bottom = 490.0
+text = "role 1x"
+
+[node name="Menu" type="Panel" parent="." unique_id=1974252959]
+offset_left = 10.0
+offset_top = 83.0
+offset_right = 175.0
+offset_bottom = 309.0
+
+[node name="OpenGacha" type="Button" parent="Menu" unique_id=77680482]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 87.0
+offset_right = 134.0
+offset_bottom = 133.0
+text = "Open Gacha"
+
+[node name="OpenUpgrade" type="Button" parent="Menu" unique_id=685853460]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 145.0
+offset_bottom = 65.0
+text = "Open Upgrades
+"
+
+[node name="OpenShop" type="Button" parent="Menu" unique_id=2104721863]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 154.0
+offset_right = 136.0
+offset_bottom = 198.0
+text = "Open Shop"
+
+[node name="MenuButton" type="Button" parent="." unique_id=1893378719]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 88.0
+offset_bottom = 69.0
+toggle_mode = true
+text = "Menu
+
+"
+script = ExtResource("2_e2o6t")
+
+[connection signal="pressed" from="BotaoInicial/BotaoInicial" to="." method="_on_botao_inicial_pressed"]
+[connection signal="toggled" from="MenuButton" to="MenuButton" method="_on_toggled"]

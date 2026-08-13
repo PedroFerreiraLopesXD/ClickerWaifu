@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dovb7d4wpnry0"
+path="res://.godot/imported/hotlimemiami.mp3-5d47beb7b1af23ec7fec29a38417b8ea.mp3str"
+
+[deps]
+
+source_file="res://Assets - cópia/Musgas/hotlimemiami.mp3"
+dest_files=["res://.godot/imported/hotlimemiami.mp3-5d47beb7b1af23ec7fec29a38417b8ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

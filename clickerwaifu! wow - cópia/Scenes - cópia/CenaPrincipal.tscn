@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dw77ls5fvqghu"]
+
+[ext_resource type="Texture2D" uid="uid://bd4mnc8m52ck5" path="res://Assets - cópia/Adobe Express - file.png" id="1_32mkk"]
+[ext_resource type="Script" uid="uid://d10nntn172gbp" path="res://Scripts - cópia/cena_principal.gd" id="1_l8rr2"]
+[ext_resource type="AudioStream" uid="uid://e1bcwm3o43yl" path="res://Assets - cópia/Musgas/cenaprincipal.mp3" id="3_57lsd"]
+[ext_resource type="Texture2D" uid="uid://dnmf80l8ng88s" path="res://Assets - cópia/Coems.png" id="4_57lsd"]
+[ext_resource type="PackedScene" uid="uid://m3tj6liajm38" path="res://Scenes - cópia/CoinParticle.tscn" id="5_pnbfa"]
+
+[node name="Node2D" type="Node2D" unique_id=1347450416]
+script = ExtResource("1_l8rr2")
+
+[node name="Bocchi" type="Button" parent="." unique_id=1944817241]
+offset_left = 423.0
+offset_top = 15.0
+offset_right = 1031.0
+offset_bottom = 623.0
+scale = Vector2(0.4, 0.384)
+size_flags_horizontal = 0
+icon = ExtResource("1_32mkk")
+flat = true
+
+[node name="Coems" type="Label" parent="." unique_id=1051130392]
+offset_left = 452.99997
+offset_top = 253.0
+offset_right = 514.0
+offset_bottom = 276.0
+scale = Vector2(3.3615568, 2.0499468)
+text = "Coems: "
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1704569445]
+stream = ExtResource("3_57lsd")
+autoplay = true
+parameters/looping = true
+
+[node name="Coems2" type="Sprite2D" parent="." unique_id=1203362054]
+position = Vector2(429, 277)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_57lsd")
+
+[node name="GPUParticles2D" parent="." unique_id=481953244 instance=ExtResource("5_pnbfa")]
+position = Vector2(558, 142)
+
+[node name="Panel" type="Panel" parent="." unique_id=1037956487]
+offset_left = 62.0
+offset_top = 22.0
+offset_right = 368.0
+offset_bottom = 370.0
+
+[connection signal="pressed" from="Bocchi" to="." method="_on_bocchi_pressed"]

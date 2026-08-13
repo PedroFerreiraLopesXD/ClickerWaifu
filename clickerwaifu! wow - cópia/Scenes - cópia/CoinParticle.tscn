@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://m3tj6liajm38"]
+
+[ext_resource type="Texture2D" uid="uid://dnmf80l8ng88s" path="res://Assets/Coems.png" id="1_328wu"]
+
+[sub_resource type="Curve" id="Curve_57lsd"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5405405, 33.707886), -119.38919, -119.38919, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_pnbfa"]
+curve = SubResource("Curve_57lsd")
+
+[sub_resource type="Curve" id="Curve_rgift"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_nqf7h"]
+curve = SubResource("Curve_rgift")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_57lsd"]
+inherit_velocity_ratio = 1.0
+direction = Vector3(1, -1, 0)
+spread = 80.0
+initial_velocity_min = 456.97998
+initial_velocity_max = 478.49
+angular_velocity_min = 239.99998
+angular_velocity_max = 239.99998
+radial_velocity_min = -136.56001
+radial_velocity_max = -136.56001
+radial_velocity_curve = SubResource("CurveTexture_nqf7h")
+gravity = Vector3(0, 200, 0)
+linear_accel_min = 7.529998
+linear_accel_max = 7.529998
+linear_accel_curve = SubResource("CurveTexture_pnbfa")
+damping_min = 53.361004
+damping_max = 57.527004
+scale_min = 0.19999999
+scale_max = 0.19999999
+anim_speed_min = 14.54
+anim_speed_max = 16.0
+anim_offset_max = 0.0323
+sub_emitter_mode = 1
+sub_emitter_frequency = 0.01
+
+[node name="GPUParticles2D" type="GPUParticles2D" unique_id=481953244]
+rotation = -1.5575966
+scale = Vector2(0.5, 0.5)
+emitting = false
+texture = ExtResource("1_328wu")
+lifetime = 3.0
+interp_to_end = 1.0
+one_shot = true
+speed_scale = 5.0
+explosiveness = 1.0
+randomness = 1.0
+collision_base_size = 0.5
+process_material = SubResource("ParticleProcessMaterial_57lsd")
