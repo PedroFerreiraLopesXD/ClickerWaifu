@@ -41,7 +41,9 @@
 [ext_resource type="Texture2D" uid="uid://cvmpkhedlxnlp" path="res://Assets - cópia/PAsanBaddie/ezgif-frame-034.png" id="40_rku0s"]
 [ext_resource type="Texture2D" uid="uid://cmjc6drgem8ts" path="res://Assets - cópia/PAsanBaddie/ezgif-frame-035.png" id="41_fiixr"]
 [ext_resource type="Texture2D" uid="uid://c8dlqgnn6ejwd" path="res://Assets - cópia/Jar.png" id="41_lxk4a"]
+[ext_resource type="Texture2D" uid="uid://dox7bsj57mjqm" path="res://Assets - cópia/F_BDhaDXgAAdL1l.jpg" id="43_682wm"]
 [ext_resource type="PackedScene" uid="uid://b3snl2lnv0810" path="res://Scenes - cópia/painel_shop.tscn" id="43_rsnf3"]
+[ext_resource type="PackedScene" uid="uid://0qritd1mf84y" path="res://game.tscn" id="45_htpkd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_828u3"]
 shader = ExtResource("6_c5hvc")
@@ -185,8 +187,12 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rsnf3"]
+texture = ExtResource("43_682wm")
+
 [node name="Lojinha" type="Node2D" unique_id=1363969131]
 script = ExtResource("1_c5hvc")
+cair_fora = ExtResource("45_htpkd")
 
 [node name="Musgashop" type="AudioStreamPlayer2D" parent="." unique_id=164731937]
 position = Vector2(0, 1)
@@ -210,6 +216,7 @@ frame = 35
 frame_progress = 1.0
 
 [node name="Button" type="Button" parent="PA-san" unique_id=677829865]
+visible = false
 offset_left = -130.0
 offset_top = 94.99999
 offset_right = 117.5
@@ -234,15 +241,71 @@ offset_right = 1150.0
 offset_bottom = 646.0
 
 [node name="Label" parent="PainelShop" index="0" unique_id=4478076]
-offset_left = 534.0
-offset_top = 31.0
-offset_right = 609.0
-offset_bottom = 60.0
+offset_left = 94.0
+offset_top = 15.0
+offset_right = 244.0
+offset_bottom = 76.0
+scale = Vector2(1.5, 1.5)
+text = "	 PA-SAN 
+ SHOP"
 
 [node name="CardUpgClick" parent="PainelShop" index="1" unique_id=698536089]
-offset_left = 26.0
-offset_top = 100.0
-offset_right = 255.0
-offset_bottom = 180.0
+offset_left = 863.0
+offset_top = 71.0
+offset_right = 1092.0
+offset_bottom = 151.0
+
+[node name="Label" parent="PainelShop/CardUpgClick" index="0" unique_id=1866767629]
+metadata/_edit_lock_ = true
+
+[node name="Button" parent="PainelShop/CardUpgClick" index="1" unique_id=272191157]
+metadata/_edit_lock_ = true
+
+[node name="CardUpgPassive" type="ColorRect" parent="PainelShop" unique_id=563468622]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 73.0
+offset_right = 780.0
+offset_bottom = 153.0
+color = Color(0.61960787, 0.36862746, 1, 1)
+
+[node name="Label" type="Label" parent="PainelShop/CardUpgPassive" unique_id=2030520227]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -30.0
+offset_right = 55.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Click Passivo"
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="PainelShop/CardUpgPassive" unique_id=1821440271]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 42.0
+offset_right = 174.0
+offset_bottom = 73.0
+text = "Comprar - $ 10"
+metadata/_edit_lock_ = true
+
+[node name="JAMELINHA" type="Button" parent="." unique_id=82391021]
+offset_left = 119.0
+offset_top = 549.0
+offset_right = 234.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_rsnf3")
+text = "CAIR FORA"
+
+[connection signal="pressed" from="PainelShop/CardUpgClick/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="JAMELINHA" to="." method="_on_jamelinha_pressed"]
 
 [editable path="PainelShop"]

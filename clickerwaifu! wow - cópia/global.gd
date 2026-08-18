@@ -5,7 +5,7 @@ var currency = 0
 var ganho_passivo = 0
 
 #Upgrade Click
-
+@onready var botao_upgrade = $PainelShop/CardUpgClick/Button
 var upg_click_nivel = 1
 var upg_click_custo = 10
 

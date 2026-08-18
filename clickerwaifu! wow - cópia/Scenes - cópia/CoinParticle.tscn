@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://m3tj6liajm38"]
 
-[ext_resource type="Texture2D" uid="uid://dnmf80l8ng88s" path="res://Assets/Coems.png" id="1_328wu"]
+[ext_resource type="Texture2D" uid="uid://dnmf80l8ng88s" path="res://Assets - cópia/Coems.png" id="1_328wu"]
 
 [sub_resource type="Curve" id="Curve_57lsd"]
 _limits = [-200.0, 200.0, 0.0, 1.0]
